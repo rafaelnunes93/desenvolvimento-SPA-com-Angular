@@ -1,0 +1,38 @@
+<div class="container main-container">
+    <h3>Interpolation</h3>
+    <!-- <p>O numero de Cliques é : {{contadorCliques}}</p> -->
+
+    <p [ngClass]="{
+        'text-secondary': contadorCliques < 3,
+        'text-succes': contadorCliques >= 3,
+        'text-warning': contadorCliques > 5,
+        'text-danger': contadorCliques >= 9
+    }">O Numero de Clique é: {{contadorCliques}}</p>
+
+    <br>
+    <br>
+    <h3>Property Binding</h3>
+
+    <button class="btn btn-info" [disabled]="contadorCliques >= 10" >Aumentar</button>
+    <br>
+    <img [src]="urlImagem" height="50" width="50" alt="">
+    <br>
+
+    <h3>Event Binding</h3>
+    <button class="btn btn-warning" (click)='adicionarClique()'>Clique-me</button>
+    <button class="btn btn-danger" (click)='ZerarContado()' marginleft="4px" [disabled]="contadorCliques < 10">Zerar</button>
+
+    <h3>TWO_WAY Binding</h3>
+
+    <!-- <input type="text" (keyup)='KeyUp($event)' placeholder="Digite seu nome:">
+    <br>
+    <label for="">Seu nome é : {{ nome }}</label> -->
+
+    <input type="text"  [(ngModel)]="nome" placeholder="Digite seu nome:">
+    <br>
+    <label [ngClass]='nome'>Seu nome é : {{ nome }}</label>
+
+
+
+
+</div>
