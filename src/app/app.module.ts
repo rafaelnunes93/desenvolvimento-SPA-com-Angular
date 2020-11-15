@@ -14,6 +14,7 @@ import { ContatoComponent } from './institucional/contato/contato.component';
 import {rootRouterConfig} from './app.routes';
 import { from } from 'rxjs';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
+import { ProdutoService } from './produtos/produtos.services';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
   imports: [
     BrowserModule,
     FormsModule,
+    ProdutoService,
     [RouterModule.forRoot(rootRouterConfig,{useHash:false})]
   ],
   providers: [
